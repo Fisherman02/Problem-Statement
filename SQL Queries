@@ -1,0 +1,33 @@
+-- Select the top 20 rows of the matches table.
+SELECT *
+FROM `indigo-griffin-351504.STEP_i.matches`
+LIMIT 20
+
+-- Select the top 20 rows of the deliveries table.
+
+SELECT *
+FROM `indigo-griffin-351504.STEP_i.deliveries`
+LIMIT 20
+
+--Fetch data of all the matches played on 2nd May 2013.
+
+SELECT *
+FROM `indigo-griffin-351504.STEP_i.matches`
+WHERE date = '2013-05-02'
+
+--Fetch data of all the matches where the margin of victory is more than 100 runs.
+SELECT *
+FROM `indigo-griffin-351504.STEP_i.matches`
+WHERE result_margin > 100
+
+// Fetch data of all the matches where the final scores of both teams tied and order it in
+descending order of the date//
+
+SELECT *
+FROM `indigo-griffin-351504.STEP_i.matches`
+WHERE result = 'tie'
+ORDER BY date DESC 
+
+--Get the count of cities that have hosted an IPL match.
+SELECT COUNT(DISTINCT city)
+FROM `indigo-griffin-351504.STEP_i.matches`
